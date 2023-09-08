@@ -9,4 +9,22 @@
     
     #define RCC_CONFIG_H_
 
+    /**
+     * @brief choose your desired system clock
+     * 
+     * @param RCC_HSI which will enable the High Speed Internal Clock
+     * @param RCC_HSE which will enable the High Speed External Clock
+     */
+    #define RCC_SYS_CLK         RCC_HSE 
+                             //?RCC_HSI
+
+    /**
+     * @brief //!If you choose RCC_HSE, you will have to choose its type
+     * 
+     * @param RCC_HSE_CRY Which will enable the crystal clock
+     * @param RCC_HSE_RC  Which will enable the RC clock
+     */
+    #define RCC_HSE_TYPE        RCC_HSE_CRY
+                             //?RCC_HSE_RC
+
 #endif

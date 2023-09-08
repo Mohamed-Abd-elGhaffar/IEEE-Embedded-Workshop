@@ -9,4 +9,10 @@
 
     #define RCC_INTERFACE_H_
 
+    Std_ReturnType Mcal_Rcc_InitSySClock();
+    Std_ReturnType Mcal_Rcc_EnablePeripheral();
+    Std_ReturnType Mcal_Rcc_DisablePeripheral();
+
+
+
 #endif
