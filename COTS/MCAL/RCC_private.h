@@ -22,25 +22,4 @@
     #define RCC_BDCR                *((volatile u32*)0x40021020) 
     #define RCC_CSR                 *((volatile u32*)0x40021024) 
 
-    #define RCC_HSI                 0
-    #define RCC_HSE                 1
-    #define RCC_PLL                 2
-
-    #define RCC_HSE_CRY             0
-    #define RCC_HSE_RC              1
-
-    #define RCC_AHB                 0
-    #define RCC_APB_1               1
-    #define RCC_APB_2               2
-
-/*******************************< RCC_CR_BITS >******************************/
-    #define RCC_CR_HSION            0
-    #define RCC_CR_HSIRDY           1
-    #define RCC_CR_HSEON            16
-    #define RCC_CR_HSERDY           17
-    #define RCC_CR_HSEBYP           18
-    #define RCC_CR_CSSON            19
-    #define RCC_CR_PLLON            24
-    #define RCC_CR_PLLRDY           25
-
 #endif

@@ -12,6 +12,36 @@
     Std_ReturnType Mcal_Rcc_InitSySClock();
     Std_ReturnType Mcal_Rcc_EnablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_PeripheralBit);
     Std_ReturnType Mcal_Rcc_DisablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_PeripheralBit);
+    Std_ReturnType Mcal_Rcc_PllProperties();
+
+    #define RCC_HSI                 0
+    #define RCC_HSE                 1
+    #define RCC_PLL                 2
+
+    #define RCC_HSE_CRY             0
+    #define RCC_HSE_RC              1
+
+    #define RCC_AHB                 0
+    #define RCC_APB_1               1
+    #define RCC_APB_2               2
+
+/*******************************< PLL >*************************************/
+    #define RCC_PLL_SRC_BIT         16
+    #define RCC_PLL_SRC_HSI         0
+    #define RCC_PLL_SRC_HSE         1
+    
+    #define PLL_MUL_FAC_MIN         2
+    #define PLL_MUL_FAC_MAX         16
+
+/*******************************< RCC_CR_BITS >******************************/
+    #define RCC_CR_HSION            0
+    #define RCC_CR_HSIRDY           1
+    #define RCC_CR_HSEON            16
+    #define RCC_CR_HSERDY           17
+    #define RCC_CR_HSEBYP           18
+    #define RCC_CR_CSSON            19
+    #define RCC_CR_PLLON            24
+    #define RCC_CR_PLLRDY           25
 
 /*******************************< RCC_AHBENR_BITS >*************************/
     #define RCC_AHBENR_DMA1EN       0

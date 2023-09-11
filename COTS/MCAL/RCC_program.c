@@ -138,5 +138,31 @@ Std_ReturnType Mcal_Rcc_DisablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_Periphera
     break;
     }
     return Local_Function_Status;
-
 }
+
+Std_ReturnType Mcal_Rcc_PllProperties()
+{
+    Std_ReturnType Local_Function_Status = E_NOT_OK;
+    
+    //PLL source clock
+    #if RCC_PLL_SRC == RCC_PLL_SRC_HSE
+        SET_BIT(RCC_CFGR ,RCC_PLL_SRC_BIT);
+        Local_Function_Status = E_OK;
+    #elif RCC_PLL_SRC == RCC_PLL_SRC_HSI
+        CLR_BIT(RCC_CFGR ,RCC_PLL_SRC_BIT);
+        Local_Function_Status = E_OK;
+    #else
+        #error "please choose a suitable clock"
+    #endif
+
+    //PLL Frequency Multiplier
+        #if PLL_MUL_FAC >= PLL_MUL_FAC_MIN && PLL_MUL_FAC <= PLL_MUL_FAC_MAX
+        RCC_CFGR &= ~((0b1111) << 18);
+        RCC_CFGR |= ((PLL_MUL_FAC - 2) << 18);
+        Local_Function_Status = E_OK;
+    #else
+        #error "Please confirm that '2 <= PLL_MUL_FAC <= 16' "   
+    #endif
+    return Local_Function_Status;
+}
+

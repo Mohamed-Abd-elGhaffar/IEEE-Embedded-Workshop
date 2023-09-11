@@ -27,4 +27,10 @@
     #define RCC_HSE_TYPE        RCC_HSE_CRY
                              //?RCC_HSE_RC
 
+    #define RCC_PLL_SRC         RCC_PLL_SRC_HSE
+                             //?RCC_PLL_SRC_HSI
+
+    #define PLL_MUL_FAC         PLL_MUL_FAC_MIN
+                             //?PLL_MUL_FAC_MAX , any value from 2 --> 16
+
 #endif
