@@ -15,11 +15,15 @@
 #include<RCC_private.h>
 
 /************************<Implementing the choosen clock>**********************/
-/**
-* @brief This function enables the chosen clock - That the user chose in 
-*        RCC_Config.h - then it defines it as the system clock
-*/
 
+/**
+ * @brief This function enables the chosen clock - That the user chose in 
+ *        RCC_Config.h - then it defines it as the system clock
+ *        
+ * @return Std_ReturnType Local_Function_Status
+ *         -E_OK if the function was completed successfully
+ *         -E_NOT_OK if the function wasn't completed successfully
+ */
 Std_ReturnType Mcal_Rcc_InitSySClock()
 {
 
@@ -35,7 +39,6 @@ Std_ReturnType Mcal_Rcc_InitSySClock()
  * @warning a watchdog needs to be defined in order to avoid endless looping
  *          in case the function failed to start
  */
-
     Std_ReturnType Local_Function_Status = E_NOT_OK;
 
     #if RCC_SYS_CLK == RCC_HSI              //*HSI Implementation
@@ -84,8 +87,27 @@ Std_ReturnType Mcal_Rcc_InitSySClock()
     return Local_Function_Status;
 }
 
+/**
+ * @brief Used to enable a certain peripheral on AHB, APB1 and APB2 busses
+ * 
+ * @param Rcc_PeripheralBus Bus value (RCC_AHB, RCC_APB_1, RCC_APB_2)
+ * @param Rcc_PeripheralBit Peripheral Bit Number (ex: RCC_APB1ENR_USART2EN, etc...)
+ * @return Std_ReturnType Local_Function_Status
+ *        -E_OK if the function was completed successfully
+ *        -E_NOT_OK if the function wasn't completed successfully  
+ */
 Std_ReturnType Mcal_Rcc_EnablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_PeripheralBit)
 {
+
+    /**
+     * @brief Local_Function_Status is a Boolean Which has to main values
+     *
+     * @param E_OK Whose value is 1 and it means that the function was completed
+     *             successfully
+     * 
+     * @param E_NOT_OK Whose value is 0 and it means that the function wasn't 
+     *                 completed successfully
+     */
     Std_ReturnType Local_Function_Status = E_NOT_OK;
     switch (Rcc_PeripheralBus)
     {
@@ -105,6 +127,10 @@ Std_ReturnType Mcal_Rcc_EnablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_Peripheral
     break;
 
     default:
+        /**
+         * @brief To avoid user based errors if the user wrote an incompatible
+         *        value an error is returned
+         */
         #error "A suitable Peripheral bus must be chosen"
         Local_Function_Status = E_NOT_OK;
     break;
@@ -112,8 +138,27 @@ Std_ReturnType Mcal_Rcc_EnablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_Peripheral
     return Local_Function_Status;
 }
 
+/**
+ * @brief Used to disable a certain peripheral on AHB, APB1 and APB2 busses
+ * 
+ * @param Rcc_PeripheralBus Bus value (RCC_AHB, RCC_APB_1, RCC_APB_2)
+ * @param Rcc_PeripheralBit Peripheral Bit Number (ex: RCC_APB1ENR_USART2EN, etc...)
+ * @return Std_ReturnType Local_Function_Status
+ *        -E_OK if the function was completed successfully
+ *        -E_NOT_OK if the function wasn't completed successfully  
+ */
 Std_ReturnType Mcal_Rcc_DisablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_PeripheralBit)
 {
+
+    /**
+     * @brief Local_Function_Status is a Boolean Which has to main values
+     *
+     * @param E_OK Whose value is 1 and it means that the function was completed
+     *             successfully
+     * 
+     * @param E_NOT_OK Whose value is 0 and it means that the function wasn't 
+     *                 completed successfully
+     */
     Std_ReturnType Local_Function_Status = E_NOT_OK;
     switch (Rcc_PeripheralBus)
     {
@@ -133,6 +178,10 @@ Std_ReturnType Mcal_Rcc_DisablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_Periphera
     break;
 
     default:
+        /**
+         * @brief To avoid user based errors if the user wrote an incompatible
+         *        value an error is returned
+         */
         #error "A suitable Peripheral bus must be chosen"
         Local_Function_Status = E_NOT_OK;
     break;
@@ -140,6 +189,13 @@ Std_ReturnType Mcal_Rcc_DisablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_Periphera
     return Local_Function_Status;
 }
 
+/**
+ * @brief Pll Properties such as Multiplication factor and source clock are set in this function
+ * 
+ * @return Std_ReturnType Local_Function_Status
+ *         -E_OK if the function was completed successfully
+ *         -E_NOT_OK if the function wasn't completed successfully 
+ */
 Std_ReturnType Mcal_Rcc_PllProperties()
 {
     Std_ReturnType Local_Function_Status = E_NOT_OK;
@@ -152,6 +208,10 @@ Std_ReturnType Mcal_Rcc_PllProperties()
         CLR_BIT(RCC_CFGR ,RCC_PLL_SRC_BIT);
         Local_Function_Status = E_OK;
     #else
+        /**
+        * @brief To avoid user based errors if the user wrote an incompatible
+        *        value an error is returned
+        */
         #error "please choose a suitable clock"
     #endif
 
@@ -161,6 +221,10 @@ Std_ReturnType Mcal_Rcc_PllProperties()
         RCC_CFGR |= ((PLL_MUL_FAC - 2) << 18);
         Local_Function_Status = E_OK;
     #else
+        /**
+        * @brief To avoid user based errors if the user wrote an incompatible
+        *        value an error is returned
+        */
         #error "Please confirm that '2 <= PLL_MUL_FAC <= 16' "   
     #endif
     return Local_Function_Status;
