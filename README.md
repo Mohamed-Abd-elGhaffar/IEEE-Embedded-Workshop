@@ -1,2 +1,2 @@
 # IEEE-Embedded-Workshop
-##Author: Mohamed Reda Mohamed
+Author: Mohamed Reda Mohamed
