@@ -13,7 +13,8 @@
     Std_ReturnType Mcal_Rcc_EnablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_PeripheralBit);
     Std_ReturnType Mcal_Rcc_DisablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_PeripheralBit);
     Std_ReturnType Mcal_Rcc_PllProperties();
-
+    
+/*******************************< RCC >*************************************/
     #define RCC_HSI                 0
     #define RCC_HSE                 1
     #define RCC_PLL                 2
