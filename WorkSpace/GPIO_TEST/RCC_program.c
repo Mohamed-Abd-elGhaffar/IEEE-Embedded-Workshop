@@ -1,18 +1,18 @@
-//* ===========================================================================
-//*                      Author      : Mohamed Reda Mohamed
-//*                      Date        : 7/9/2023
-//*                      Version     : 0.1
-//*                      Module      : MCAL_RCC_program.c
-//* ===========================================================================
+// * ===========================================================================
+// *                      Author      : Mohamed Reda Mohamed
+// *                      Date        : 7/9/2023
+// *                      Version     : 0.1
+// *                      Module      : MCAL_RCC_program.c
+// * ===========================================================================
 
 /************************************< LIB >**********************************/
-#include<STD_TYPES.h>
-#include<BIT_MATH.h>
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
 
 /************************************< MCAL >*********************************/
-#include<RCC_config.h>
-#include<RCC_interface.h>
-#include<RCC_private.h>
+#include "RCC_config.h"
+#include "RCC_interface.h"
+#include "RCC_private.h"
 
 /************************<Implementing the choosen clock>**********************/
 
@@ -41,12 +41,12 @@ Std_ReturnType Mcal_Rcc_InitSySClock()
  */
     Std_ReturnType Local_Function_Status = E_NOT_OK;
 
-    #if RCC_SYS_CLK == RCC_HSI              //*HSI Implementation
+    #if RCC_SYS_CLK == RCC_HSI              // *HSI Implementation
         SET_BIT(RCC_CR, RCC_CR_HSION);
         while (!RCC_CR_HSIRDY);             //Waiting for HSI to start
         RCC_CFGR = 0x0;
         Local_Function_Status = E_OK;
-    #elif RCC_SYS_CLK == RCC_HSE            //*HSE Implementation    
+    #elif RCC_SYS_CLK == RCC_HSE            // *HSE Implementation    
         #if RCC_HSE_TYPE == RCC_HSE_CRY
             CLR_BIT(RCC_CR, RCC_CR_HSEBYP);
             SET_BIT(RCC_CR, RCC_CR_HSEON);
@@ -66,10 +66,10 @@ Std_ReturnType Mcal_Rcc_InitSySClock()
         #endif
 
         RCC_CFGR = 0x00000001;
-        SET_BIT(RCC_CR, RCC_CR_CSSON):      //*Activating the HSE security system
+        SET_BIT(RCC_CR, RCC_CR_CSSON);      // *Activating the HSE security system
         Local_Function_Status = E_OK;    
     
-    #elif RCC_CLK_SYS == RCC_PLL            //*PLL Implementation
+    #elif RCC_CLK_SYS == RCC_PLL            // *PLL Implementation
         SET_BIT(RCC_CR, RCC_CR_PLLON);
             while (!RCC_CR_PLLRDY);         //Waiting for PLL to start   
         RCC_CFGR = 0x00000002;
@@ -128,10 +128,9 @@ Std_ReturnType Mcal_Rcc_EnablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_Peripheral
 
     default:
         /**
-         * @brief To avoid user based errors if the user wrote an incompatible
-         *        value an error is returned
+         * @brief To notify the user about conifg-based errors if the user wrote an incompatible
+         *        value an 0 is returned
          */
-        #error "A suitable Peripheral bus must be chosen"
         Local_Function_Status = E_NOT_OK;
     break;
     }
@@ -179,10 +178,9 @@ Std_ReturnType Mcal_Rcc_DisablePeripheral(u8 Rcc_PeripheralBus, u8 Rcc_Periphera
 
     default:
         /**
-         * @brief To avoid user based errors if the user wrote an incompatible
-         *        value an error is returned
+         * @brief To notify the user about conifg-based errors if the user wrote an incompatible
+         *        value an 0 is returned
          */
-        #error "A suitable Peripheral bus must be chosen"
         Local_Function_Status = E_NOT_OK;
     break;
     }
