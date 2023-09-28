@@ -14,6 +14,7 @@
 #include "GPIO_interface.h"
 #include "GPIO_private.h"
 
+/************************************< Functions >*********************************/
 Std_ReturnType Mcal_Gpio_SetPinMode(u8 Port, u8 Pin, u8 Mode)
 {
     Std_ReturnType Local_Function_Status = E_NOT_OK;

@@ -1,0 +1,261 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mohamed Reda, ASU, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+E:\Drasa\GIT\IEEE-Embedded-Workshop\WorkSpace\NVIC_TEST\NVIC_TEST.uvprojx
+Project File Date:  09/28/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+NVIC_program.c(1): warning: // comments are not allowed in this language [-Wcomment]
+// * ===========================================================================
+^
+NVIC_program.c(9): warning: In file included from...
+./STD_TYPES.h(1): warning: // comments are not allowed in this language [-Wcomment]
+// * ===========================================================================
+^
+NVIC_program.c(10): warning: In file included from...
+./BIT_MATH.h(1): warning: // comments are not allowed in this language [-Wcomment]
+// * ===========================================================================
+^
+./BIT_MATH.h(17): warning: no newline at end of file [-Wnewline-eof]
+#endif    
+          ^
+NVIC_program.c(13): warning: In file included from...
+./NVIC_config.h(1): warning: // comments are not allowed in this language [-Wcomment]
+// * ===========================================================================
+^
+./NVIC_config.h(13): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+NVIC_program.c(14): warning: In file included from...
+./NVIC_interface.h(1): warning: // comments are not allowed in this language [-Wcomment]
+// * ===========================================================================
+^
+./NVIC_interface.h(27): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+NVIC_program.c(15): warning: In file included from...
+./NVIC_private.h(1): warning: // comments are not allowed in this language [-Wcomment]
+// * ===========================================================================
+^
+./NVIC_private.h(45): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+NVIC_program.c(16): warning: In file included from...
+./SCB_interface.h(1): warning: // comments are not allowed in this language [-Wcomment]
+// * ===========================================================================
+^
+./SCB_interface.h(30): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+NVIC_program.c(17): warning: In file included from...
+./SCB_config.h(1): warning: // comments are not allowed in this language [-Wcomment]
+// * ===========================================================================
+^
+./SCB_config.h(19): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+NVIC_program.c(27): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 0 ... 31:
+           ^
+NVIC_program.c(32): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 32 ... 63:
+            ^
+NVIC_program.c(37): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 64 ... 67:
+            ^
+NVIC_program.c(56): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 0 ... 31:
+           ^
+NVIC_program.c(61): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 32 ... 63:
+            ^
+NVIC_program.c(66): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 64 ... 67:
+            ^
+NVIC_program.c(85): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 0 ... 31:
+           ^
+NVIC_program.c(90): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 32 ... 63:
+            ^
+NVIC_program.c(95): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 64 ... 67:
+            ^
+NVIC_program.c(114): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 0 ... 31:
+           ^
+NVIC_program.c(119): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 32 ... 63:
+            ^
+NVIC_program.c(124): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 64 ... 67:
+            ^
+NVIC_program.c(141): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 0 ... 31:
+           ^
+NVIC_program.c(142): warning: implicit conversion loses integer precision: 'unsigned int' to 'Std_ReturnType' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return GET_BIT(NVIC_ISPR0,copy_IRQn);
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
+    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
+                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+NVIC_program.c(145): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 32 ... 63:
+            ^
+NVIC_program.c(146): warning: implicit conversion loses integer precision: 'unsigned int' to 'Std_ReturnType' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return GET_BIT(NVIC_ISPR1,(copy_IRQn-32));
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
+    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
+                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+NVIC_program.c(149): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 64 ... 67:
+            ^
+NVIC_program.c(150): warning: implicit conversion loses integer precision: 'unsigned int' to 'Std_ReturnType' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return GET_BIT(NVIC_ISPR2,(copy_IRQn-64));
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
+    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
+                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+NVIC_program.c(155): warning: 'break' will never be executed [-Wunreachable-code-break]
+        break;
+        ^~~~~
+NVIC_program.c(151): warning: 'break' will never be executed [-Wunreachable-code-break]
+        break;
+        ^~~~~
+NVIC_program.c(147): warning: 'break' will never be executed [-Wunreachable-code-break]
+        break;
+        ^~~~~
+NVIC_program.c(143): warning: 'break' will never be executed [-Wunreachable-code-break]
+        break;
+        ^~~~~
+NVIC_program.c(163): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 0 ... 31:
+           ^
+NVIC_program.c(164): warning: implicit conversion loses integer precision: 'unsigned int' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return GET_BIT(NVIC_IABR0,copy_IRQn);
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
+    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
+                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+NVIC_program.c(167): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 32 ... 63:
+            ^
+NVIC_program.c(168): warning: implicit conversion loses integer precision: 'unsigned int' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return GET_BIT(NVIC_IABR1,(copy_IRQn-32));
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
+    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
+                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+NVIC_program.c(171): warning: use of GNU case range extension [-Wgnu-case-range]
+    case 64 ... 67:
+            ^
+NVIC_program.c(172): warning: implicit conversion loses integer precision: 'unsigned int' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return GET_BIT(NVIC_IABR2,(copy_IRQn-64));
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
+    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
+                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+NVIC_program.c(177): warning: 'break' will never be executed [-Wunreachable-code-break]
+        break;
+        ^~~~~
+NVIC_program.c(173): warning: 'break' will never be executed [-Wunreachable-code-break]
+        break;
+        ^~~~~
+NVIC_program.c(169): warning: 'break' will never be executed [-Wunreachable-code-break]
+        break;
+        ^~~~~
+NVIC_program.c(165): warning: 'break' will never be executed [-Wunreachable-code-break]
+        break;
+        ^~~~~
+NVIC_program.c(191): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                                                NVIC_IPR[Local_Index] = ((((gPriority <<(MCAL_NVIC_PG_BIN - NVIC_16G_0S_BIN)) | sPriority) << 4) << ((copy_IRQn % 4)*8));
+                                                                                         ^
+./SCB_config.h(17): note: expanded from macro 'MCAL_NVIC_PG_BIN'
+    #define MCAL_NVIC_PG_BIN       NVIC_0G_16S_BIN
+                                   ^
+./SCB_interface.h(29): note: expanded from macro 'NVIC_0G_16S_BIN'
+    #define NVIC_0G_16S_BIN             0b111
+                                        ^
+NVIC_program.c(191): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                                                NVIC_IPR[Local_Index] = ((((gPriority <<(MCAL_NVIC_PG_BIN - NVIC_16G_0S_BIN)) | sPriority) << 4) << ((copy_IRQn % 4)*8));
+                                                                                                            ^
+./SCB_interface.h(25): note: expanded from macro 'NVIC_16G_0S_BIN'
+    #define NVIC_16G_0S_BIN             0b011
+                                        ^
+NVIC_program.c(191): warning: implicit conversion changes signedness: 'int' to 'u32' (aka 'unsigned int') [-Wsign-conversion]
+                                                NVIC_IPR[Local_Index] = ((((gPriority <<(MCAL_NVIC_PG_BIN - NVIC_16G_0S_BIN)) | sPriority) << 4) << ((copy_IRQn % 4)*8));
+                                                                      ~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+NVIC_program.c(190): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+            u32 Local_Index = (u32)(copy_IRQn/4);
+                ^
+NVIC_program.c(214): warning: unused parameter 'copy_IRQn' [-Wunused-parameter]
+u8 NVIC_GetPriority (IRQn_t copy_IRQn)
+                            ^
+NVIC_program.c(217): warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+NVIC_program.c(222): warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+53 warnings generated.
+compiling NVIC_program.c...
+linking...
+Program Size: Code=1312 RO-data=252 RW-data=0 ZI-data=1632  
+".\Objects\NVIC_TEST.axf" - 0 Error(s), 53 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  C:/Users/MoReda/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/MoReda/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
