@@ -8,7 +8,7 @@
 #ifndef SCB_INTERFACE_H_
     #define SCB_INTERFACE_H_
         
-    Std_ReturnType Mcal_Scb_Nvic_config(u32 Copy_PriorityGrouping);
+    void Mcal_Scb_Nvic_config(u32 Copy_PriorityGrouping);
 
     #define NVIC_16G_0S                 0
     #define NVIC_8G_2S                  2

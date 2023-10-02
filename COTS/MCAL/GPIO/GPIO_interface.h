@@ -17,6 +17,10 @@ Std_ReturnType Mcal_Gpio_GetPinValue(u8 Port, u8 Pin, u8* ValLoc);
 #define GPIO_PORT_A                 0
 #define GPIO_PORT_B                 1
 #define GPIO_PORT_C                 2
+#define GPIO_PORT_D                 3
+#define GPIO_PORT_E                 4
+#define GPIO_PORT_F                 5
+#define GPIO_PORT_G                 6
 
 #define GPIO_PIN0                   0
 #define GPIO_PIN1                   1

@@ -181,7 +181,7 @@
     #define RCC_APB2ENR_TIM11EN     21  //TIM11 timer clock enable
     
                           /*****< AFIO >*****/
-    #define RCC_APB2ENR_ِAFIOEN      0   //Alternate function IO clock enable
+    #define RCC_APB2ENR_AFIOEN      0   //Alternate function IO clock enable
     
                            /*****< I/O >*****/
     #define RCC_APB2ENR_IOPAEN      2   //IO port A clock enable

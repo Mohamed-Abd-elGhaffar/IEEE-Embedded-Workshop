@@ -15,8 +15,7 @@
 #include "SCB_private.h"
 
 /**********************************< Functions >*******************************/
-Std_ReturnType Mcal_Scb_Nvic_config(u32 Copy_PriorityGrouping)
+void Mcal_Scb_Nvic_config(u32 Copy_PriorityGrouping)
 {
-    Std_ReturnType Local_Function_Status = E_NOT_OK;
     SCB_AIRCR = Copy_PriorityGrouping;
 }
