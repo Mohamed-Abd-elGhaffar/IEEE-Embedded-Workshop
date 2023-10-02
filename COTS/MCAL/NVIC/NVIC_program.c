@@ -188,10 +188,7 @@ Std_ReturnType NVIC_SetPriority (IRQn_t copy_IRQn,u8 gPriority ,u8 sPriority)
         {
             Mcal_Scb_Nvic_config(NVIC_0G_16S_MASK);
             u32 Local_Index = (u32)(copy_IRQn/4);
-            u32 x = ((gPriority <<(MCAL_NVIC_PG_BIN - NVIC_16G_0S_BIN)));
-            u32 X = ((X | sPriority) << 4);
-            u32 Y = (X << ((copy_IRQn % 4)*8));
-            NVIC_IPR[Local_Index] = Y;
+            NVIC_IPR[Local_Index] = ((((gPriority <<(MCAL_NVIC_PG_BIN - NVIC_16G_0S_BIN)) | sPriority) << 4) << ((copy_IRQn % 4)*8));
 
             Local_Function_Status = E_OK;
         }
@@ -213,12 +210,12 @@ Std_ReturnType NVIC_SetPriority (IRQn_t copy_IRQn,u8 gPriority ,u8 sPriority)
 // 
 // }
 
-u8 NVIC_GetPriority (IRQn_t copy_IRQn)
-{
+// u8 NVIC_GetPriority (IRQn_t copy_IRQn)
+// {
 
-}
+// }
 
-Std_ReturnType NVIC_SystemReset (void)
-{
+// Std_ReturnType NVIC_SystemReset (void)
+// {
 
-}
+// }
