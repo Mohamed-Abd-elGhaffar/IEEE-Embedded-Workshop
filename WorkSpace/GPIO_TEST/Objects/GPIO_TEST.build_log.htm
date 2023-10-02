@@ -22,203 +22,12 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 E:\Drasa\GIT\IEEE-Embedded-Workshop\WorkSpace\GPIO_TEST\GPIO_TEST.uvprojx
-Project File Date:  09/21/2023
+Project File Date:  09/29/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-main.c(2): warning: In file included from...
-./STD_TYPES.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-main.c(3): warning: In file included from...
-./BIT_MATH.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-./BIT_MATH.h(17): warning: no newline at end of file [-Wnewline-eof]
-#endif    
-          ^
-main.c(6): warning: In file included from...
-./RCC_interface.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-./RCC_interface.h(12): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-    Std_ReturnType Mcal_Rcc_InitSySClock();
-                                        ^
-                                         void
-./RCC_interface.h(15): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-    Std_ReturnType Mcal_Rcc_PllProperties();
-                                         ^
-                                          void
-./RCC_interface.h(207): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-main.c(7): warning: In file included from...
-./GPIO_interface.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-./GPIO_interface.h(61): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-main.c(16): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-        Mcal_Gpio_SetPinMode(GPIO_PORT_A, GPIO_PIN3, OUTPUT_PUSH_PULL);
-                                                     ^
-./GPIO_interface.h(43): note: expanded from macro 'OUTPUT_PUSH_PULL'
-#define OUTPUT_PUSH_PULL            0b0001U
-                                    ^
-main.c(19): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-        Mcal_Gpio_SetPinMode(GPIO_PORT_A, GPIO_PIN0, INPUT_PULL_UP);
-                                                     ^
-./GPIO_interface.h(41): note: expanded from macro 'INPUT_PULL_UP'
-#define INPUT_PULL_UP               0b1000U
-                                    ^
-main.c(22): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-        Mcal_Gpio_SetPinMode(GPIO_PORT_A, GPIO_PIN1, INPUT_PULL_UP);
-                                                     ^
-./GPIO_interface.h(41): note: expanded from macro 'INPUT_PULL_UP'
-#define INPUT_PULL_UP               0b1000U
-                                    ^
-main.c(25): warning: // comments are not allowed in this language [-Wcomment]
-        //SET_BIT(0x4001080C, 3);
-        ^
-13 warnings generated.
-compiling main.c...
-GPIO_program.c(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-GPIO_program.c(9): warning: In file included from...
-./STD_TYPES.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-GPIO_program.c(10): warning: In file included from...
-./BIT_MATH.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-./BIT_MATH.h(17): warning: no newline at end of file [-Wnewline-eof]
-#endif    
-          ^
-GPIO_program.c(13): warning: In file included from...
-./GPIO_config.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-./GPIO_config.h(11): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-GPIO_program.c(14): warning: In file included from...
-./GPIO_interface.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-./GPIO_interface.h(61): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-GPIO_program.c(15): warning: In file included from...
-./GPIO_private.h(1): warning: // comments are not allowed in this language [-Wcomment]
-// * ===========================================================================
-^
-./GPIO_private.h(45): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-GPIO_program.c(23): warning: result of comparison of unsigned expression >= 0 is always true [-Wtautological-unsigned-zero-compare]
-        if (Pin >= 0 && Pin <=7)
-            ~~~ ^  ~
-GPIO_program.c(25): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-            GPIOA_CRL &= (~(0b1111 << (Pin * 4)));
-                            ^
-GPIO_program.c(25): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOA_CRL &= (~(0b1111 << (Pin * 4)));
-                      ~~  ^~~~~~~~~~~~~~~~~~~~~~
-GPIO_program.c(26): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOA_CRL |= (Mode << (Pin * 4));
-                      ~~  ~~~~~^~~~~~~~~~~~
-GPIO_program.c(31): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-            GPIOA_CRH &= (~(0b1111 << ((Pin-8) * 4)));
-                            ^
-GPIO_program.c(31): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOA_CRH &= (~(0b1111 << ((Pin-8) * 4)));
-                      ~~  ^~~~~~~~~~~~~~~~~~~~~~~~~~
-GPIO_program.c(32): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOA_CRH |= (Mode << ((Pin-8) * 4));
-                      ~~  ~~~~~^~~~~~~~~~~~~~~~
-GPIO_program.c(42): warning: result of comparison of unsigned expression >= 0 is always true [-Wtautological-unsigned-zero-compare]
-        if (Pin >= 0 && Pin <=7)
-            ~~~ ^  ~
-GPIO_program.c(44): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-            GPIOB_CRL &= (~(0b1111 << (Pin * 4)));
-                            ^
-GPIO_program.c(44): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOB_CRL &= (~(0b1111 << (Pin * 4)));
-                      ~~  ^~~~~~~~~~~~~~~~~~~~~~
-GPIO_program.c(45): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOB_CRL |= (Mode << (Pin * 4));
-                      ~~  ~~~~~^~~~~~~~~~~~
-GPIO_program.c(50): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-            GPIOB_CRH &= (~(0b1111 << ((Pin-8) * 4)));
-                            ^
-GPIO_program.c(50): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOB_CRH &= (~(0b1111 << ((Pin-8) * 4)));
-                      ~~  ^~~~~~~~~~~~~~~~~~~~~~~~~~
-GPIO_program.c(51): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOB_CRH |= (Mode << ((Pin-8) * 4));
-                      ~~  ~~~~~^~~~~~~~~~~~~~~~
-GPIO_program.c(61): warning: result of comparison of unsigned expression >= 0 is always true [-Wtautological-unsigned-zero-compare]
-        if (Pin >= 0 && Pin <=7)
-            ~~~ ^  ~
-GPIO_program.c(63): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-            GPIOC_CRL &= (~(0b1111 << (Pin * 4)));
-                            ^
-GPIO_program.c(63): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOC_CRL &= (~(0b1111 << (Pin * 4)));
-                      ~~  ^~~~~~~~~~~~~~~~~~~~~~
-GPIO_program.c(64): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOC_CRL |= (Mode << (Pin * 4));
-                      ~~  ~~~~~^~~~~~~~~~~~
-GPIO_program.c(69): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-            GPIOC_CRH &= (~(0b1111 << ((Pin-8) * 4)));
-                            ^
-GPIO_program.c(69): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOC_CRH &= (~(0b1111 << ((Pin-8) * 4)));
-                      ~~  ^~~~~~~~~~~~~~~~~~~~~~~~~~
-GPIO_program.c(70): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-            GPIOC_CRH |= (Mode << ((Pin-8) * 4));
-                      ~~  ~~~~~^~~~~~~~~~~~~~~~
-GPIO_program.c(88): warning: variable 'Local_Function_Status' set but not used [-Wunused-but-set-variable]
-    Std_ReturnType Local_Function_Status = E_NOT_OK;
-                   ^
-GPIO_program.c(152): warning: non-void function does not return a value [-Wreturn-type]
-}
-^
-GPIO_program.c(161): warning: implicit conversion loses integer precision: 'unsigned int' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-        *ValLoc = GET_BIT(GPIOA_IDR, Pin);
-                ~ ^~~~~~~~~~~~~~~~~~~~~~~
-./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
-    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
-                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-GPIO_program.c(166): warning: implicit conversion loses integer precision: 'unsigned int' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-        *ValLoc = GET_BIT(GPIOB_IDR, Pin);
-                ~ ^~~~~~~~~~~~~~~~~~~~~~~
-./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
-    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
-                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-GPIO_program.c(171): warning: implicit conversion loses integer precision: 'unsigned int' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-        *ValLoc = GET_BIT(GPIOC_IDR, Pin);
-                ~ ^~~~~~~~~~~~~~~~~~~~~~~
-./BIT_MATH.h(15): note: expanded from macro 'GET_BIT'
-    #define GET_BIT(REG, BIT_NUM)       ((REG & (1 << BIT_NUM)) >> BIT_NUM)
-                                         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-GPIO_program.c(179): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-GPIO_program.c(156): warning: variable 'Local_Function_Status' set but not used [-Wunused-but-set-variable]
-    Std_ReturnType Local_Function_Status = E_NOT_OK;
-                   ^
-GPIO_program.c(179): warning: non-void function does not return a value [-Wreturn-type]
-}
-^
-39 warnings generated.
-compiling GPIO_program.c...
-linking...
-Program Size: Code=1956 RO-data=252 RW-data=0 ZI-data=1632  
-".\Objects\GPIO_TEST.axf" - 0 Error(s), 52 Warning(s).
+".\Objects\GPIO_TEST.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -245,11 +54,11 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
-      Include file:  RTE_Driver/Config/RTE_Device.h
-      Source file:   Device/Source/system_stm32f10x.c
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
-Build Time Elapsed:  00:00:01
+      Source file:   Device/Source/system_stm32f10x.c
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

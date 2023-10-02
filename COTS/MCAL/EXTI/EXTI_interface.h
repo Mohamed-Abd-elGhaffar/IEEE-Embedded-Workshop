@@ -36,5 +36,6 @@
     
     #define EXTI_RISING                 0
     #define EXTI_FALLING                1
+    #define EXTI_ON_CHANGE              2
 
 #endif

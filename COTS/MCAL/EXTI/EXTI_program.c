@@ -33,14 +33,22 @@ Std_ReturnType Mcal_EXTI_LineMode(u8 copy_ExtiLine, u8 copy_Mode)
     {
     case EXTI_RISING:
         SET_BIT(EXTI_RTSR, copy_ExtiLine);
+        CLR_BIT(EXTI_FTSR, copy_ExtiLine);
         Local_Function_Status = E_OK;
     break;
 
     case EXTI_FALLING:
         SET_BIT(EXTI_FTSR, copy_ExtiLine);
+        CLR_BIT(EXTI_RTSR, copy_ExtiLine);
         Local_Function_Status = E_OK;
     break;
     
+    case EXTI_ON_CHANGE:
+        SET_BIT(EXTI_RTSR, copy_ExtiLine);
+        SET_BIT(EXTI_FTSR, copy_ExtiLine);
+        Local_Function_Status = E_OK;
+    break;
+
     default:
         Local_Function_Status = E_NOT_OK;
     break;
